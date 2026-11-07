@@ -1,0 +1,20 @@
+Package: DRI
+Title: tsRNA Regulatory Index (DRI) Calculator
+Version: 1.0.0
+Authors@R: 
+    person("Weiming", "Feng", email = "fengweimingshi@126.com", role = c("aut", "cre"))
+Description: A generalizable, parameter-agnostic computational framework designed 
+    to score tsRNA regulatory network activity from bulk transcriptomes.
+License: MIT + file LICENSE
+Config/roxygen2/version: 8.1.1
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports: 
+    stats
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

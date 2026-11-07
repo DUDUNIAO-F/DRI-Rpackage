@@ -1,0 +1,43 @@
+---
+title: "Introduction to DRI"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to DRI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+## Overview
+The **DRI** (tsRNA Regulatory Index) package provides a generalizable computational framework to score tsRNA network activity from bulk transcriptomes.
+
+## Quick Start
+We have provided a built-in toy dataset (`expr_toy`) so you can test the package immediately without external data.
+
+```{r, eval=TRUE}
+library(DRI)
+
+# Calculate DRI using the built-in toy data
+res <- calculate_DRI(
+  expr_mat = expr_toy, 
+  tds_genes = c("TG", "TSHR", "PAX8", "SLC5A5", "NKX2-1")
+)
+
+# View the calculated DRI scores
+print(res$DRI_score)
+```
+
+## Adapting to other cancer types
+Because the framework is parameter-agnostic, you can easily apply it to other cancers by simply changing the `tds_genes` and `anchor_gene`.
+
+```{r, eval=FALSE}
+# Example: Applying to breast cancer
+# res_brca <- calculate_DRI(
+#   expr_mat = your_brca_matrix, 
+#   tds_genes = c("ESR1", "PGR", "ERBB2"), 
+#   anchor_gene = "NSUN2"                  
+# )
+```
